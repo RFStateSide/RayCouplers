@@ -1,0 +1,10 @@
+RayCouplers common PCB P3-prep-01
+Plated holes: 244; non-plated drilled holes: 0. Internal openings are routed Edge.Cuts, not drill hits.
+0.300 mm: 12 plated hits
+0.500 mm: 202 plated hits
+0.710 mm: 3 plated hits
+0.750 mm: 6 plated hits
+1.000 mm: 12 plated hits
+1.100 mm: 5 plated hits
+3.200 mm: 4 plated hits
+Four 3.2 mm grounded plated mounting holes retained. No slots.

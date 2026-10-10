@@ -1,0 +1,12 @@
+[
+  {
+    "variant": "200w",
+    "old_annotation": "200W CONFIG\nT1, T2 = 16 turns\nR1, R2, R4, R5 = 150 \u03a9\nR3, R6 = 56 \u03a9\nR7, 11 = 3.3K\nR8, 12 = 1.6K\nR23 = 2.7K\n\n2000W CONFIG\nT1, T2 = 24 turns\nR1, R2, R4, R5 = 100 \u03a9\nR3, R6 = 100 \u03a9\nR8, 12 = 470K\nR23 = 1K\n",
+    "new_annotation": "200 W: BAT42W; R1/R2/R4/R5=150 ohm; R3/R6=56 ohm; R7/R11=3.3k; R8/R12=1.6k; R23=2.7k; T1/T2=1:16T, one #43 core each.\n2 kW: BAT42W; R1/R2/R3/R4/R5/R6=100 ohm; R7/R11=3.9k; R8/R12=1.2k; R23=2.7k; T1/T2=1:24T, two #43 cores each.\nSee population BOMs and transformer-construction.md; winding notation preserved."
+  },
+  {
+    "variant": "2kw",
+    "old_annotation": "200W CONFIG\nT1, T2 = 16 turns\nR1, R2, R4, R5 = 150 \u03a9\nR3, R6 = 56 \u03a9\nR7, 11 = 3.3K\nR8, 12 = 1.6K\nR23 = 2.7K\n\n2000W CONFIG\nT1, T2 = 24 turns\nR1, R2, R4, R5 = 100 \u03a9\nR3, R6 = 100 \u03a9\nR7, R11 = 3.9K\nR8, 12 = 1.2K\nR23 = 1K\n",
+    "new_annotation": "200 W: BAT42W; R1/R2/R4/R5=150 ohm; R3/R6=56 ohm; R7/R11=3.3k; R8/R12=1.6k; R23=2.7k; T1/T2=1:16T, one #43 core each.\n2 kW: BAT42W; R1/R2/R3/R4/R5/R6=100 ohm; R7/R11=3.9k; R8/R12=1.2k; R23=2.7k; T1/T2=1:24T, two #43 cores each.\nSee population BOMs and transformer-construction.md; winding notation preserved."
+  }
+]

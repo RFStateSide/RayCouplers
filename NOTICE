@@ -1,0 +1,11 @@
+RayCouplers — RF StateSide LLC
+Copyright RF StateSide LLC.
+SPDX-License-Identifier: CERN-OHL-P-2.0
+
+The RF StateSide-owned curated hardware design and associated engineering source documentation are prepared under CERN Open Hardware Licence Version 2 — Permissive. See the unmodified LICENSE. Retain this notice, the license and applicable third-party notices with source distributions and make applicable notices accessible to product recipients.
+
+Public Engineering Reference — AS-IS. No engineering performance warranty, guaranteed fitness for a particular use, certification, guaranteed RF power handling or calibration accuracy is claimed. Builders are responsible for evaluating their implementations, selecting appropriate components, verifying electrical/mechanical/thermal/RF behavior and applicable safety/regulatory requirements. The license governs its warranty and liability terms; these engineering statements do not amend it or establish that all liability is eliminated.
+
+Modification record: 2026-10-10, RF StateSide LLC release preparation. Consolidated historical sources into one common SOD-123 PCB and two population schematics; corrected verified metadata, represented existing mounting holes, localized existing CAD libraries, regenerated copper fills and BOMs, recorded owner transformer information and reconciled fabrication metadata. RF routing, component/pad placement, electrical connectivity and approved variant values retained. P3-prep-01 identifies a new preliminary preparation package, not a historical tested revision.
+
+Third-party source, library and software rights are not granted by this notice. See docs/asset-provenance.md and hardware/libraries/README.md. Historical archives and uncertain custom-library provenance require owner review. Final legal suitability and publication are subject to owner and appropriate legal review. Nothing has been published in this preparation phase.

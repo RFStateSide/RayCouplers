@@ -1,0 +1,20 @@
+Voltage_V,Power_W,Evidence,Source_workbook,Source_sheet,Voltage_cell,Power_cell
+0.005,0.1,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B2,A2
+0.07,0.5,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B3,A3
+0.115,1.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B4,A4
+0.36,5.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B5,A5
+0.525,10.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B6,A6
+0.766,20.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B7,A7
+0.957,30.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B8,A8
+1.097,40.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B9,A9
+1.227,50.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B10,A10
+1.351,60.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B11,A11
+1.45,70.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B12,A12
+1.555,80.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B13,A13
+1.666,90.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B14,A14
+1.717,100.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B15,A15
+1.98,125.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B16,A16
+2.15,150.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B17,A17
+2.43,175.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B18,A18
+2.57,200.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B19,A19
+3.0,250.0,historical measured forward,RayCoupler200_WtoV.xlsx,Sheet2,B20,A20

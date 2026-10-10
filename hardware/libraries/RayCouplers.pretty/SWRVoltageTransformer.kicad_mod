@@ -1,0 +1,160 @@
+(footprint "SWRVoltageTransformer"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "T2"
+		(at 0.035774 17.582708 180)
+		(layer "F.SilkS")
+		(uuid "f14326a4-061c-4300-8257-d1b513ce9115")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "1:16T"
+		(at 0 -0.5 180)
+		(layer "F.Fab")
+		(uuid "c94dfa60-2702-4b91-b655-dbd7c5ec7e85")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "28de488c-b520-4e51-8127-971992abdd52")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Custom transformer assembly 1:16T; 1 ferrite #43 core(s); construction details pending"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6fc295e5-a75a-41ad-9d44-5f0f285604e4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MANUFACTURER" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cecf0510-8049-40dd-8012-40e147ed05c6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5c74f29b-388c-4779-8ab1-a9e9d48fc78c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier" "DigiKey"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "401a17a4-b4fd-43fd-a407-6edd3f2231f6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier_PN" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6c2e436b-4176-4a19-8cf7-c868f45c35da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "FAB" "Custom Build Item by RF StateSide, LLC"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "74aeaa6a-8434-4a6e-8f65-d08d6488b720")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -10 -15)
+		(end 10 15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "User.1")
+		(uuid "1fb14230-e0c2-4b63-9d1d-bdf0da18832f")
+	)
+	(pad "1" smd rect
+		(at -13.546864 11.43 90)
+		(size 6 6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "31ae429b-2bf1-45e2-9ad4-2e47143eecbb")
+	)
+	(pad "2" smd rect
+		(at 21.562767 11.43)
+		(size 6 6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "fe922513-8b31-4142-9d95-119fa2851b53")
+	)
+	(pad "3" smd rect
+		(at -16.546864 -0.012867)
+		(size 12 6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ede1fa4a-2385-449f-8358-22f4e5b65d60")
+	)
+	(pad "4" smd rect
+		(at 16.499676 -0.012867)
+		(size 12 6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "605b5dc0-e2e0-493c-839d-bfe1140673a7")
+	)
+	(pad "5" smd rect
+		(at 13.499676 -8.064011)
+		(size 6 6)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "63d806be-7676-44dd-b002-d2ff83a70fb4")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,29 @@
+# Disposable variant projects, checks and previews
+/generated/
+/validation/
+# KiCad local state and generated caches
+*.kicad_prl
+*.kicad_pcb.lck
+*.kicad_sch.lck
+*.lck
+~*.lck
+fp-info-cache
+*-backups/
+*.bak
+*.bck
+# Python / editors / OS
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Curated BOM CSVs are included; private evidence stays local.
+
+# Private historical evidence and path inventories
+/archive/
+/manufacturing/historical/
+/calibration/measurements/
+/docs/external-model-dependencies.json
+/docs/phase2-files.md
+/docs/phase3-files.md
