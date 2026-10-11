@@ -45,9 +45,9 @@ This table is taken from the curated KiCad netlist and is the same for both popu
 
 ![Historical RayCoupler transformer winding experiments](images/raycoupler_toroid.png)
 
-Historical RayCoupler transformer winding experiments. These samples illustrate construction methods evaluated during RF StateSide LLC development. The photographed samples may not have the exact turn counts or configurations used in the final 200 W and 2 kW designs.
+Historical RayCoupler Transformer Winding Experiments. Original photograph by RF StateSide LLC showing physical development samples; cropped and background-cleaned using AI-assisted editing. Samples may differ from the final 200 W and 2 kW winding configurations.
 
-The unchanged file `raycoupler_toroid.png` was supplied from the owner's download of an RF StateSide website image. Attribution: RF StateSide LLC. The eight visible samples show varying winding/lead arrangements; no sample is assigned a verified final turn count. See [image provenance](images/README.md).
+The owner confirms photographing actual samples they constructed during RF StateSide development. ChatGPT was used only for cropping and background cleanup; the distributed file and its metadata are unchanged in Phase 5A. The eight visible samples show varying winding/lead arrangements; no sample is assigned a verified final turn count. See [image provenance](images/README.md).
 
 ## Information requiring verification
 

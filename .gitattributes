@@ -1,0 +1,7 @@
+# Preserve exact release payload bytes: manifests/checksums and ZIP members agree.
+/manufacturing/release/** -text
+# Source fingerprint uses UTF-8 with CRLF normalized to LF; keep Git PCB bytes LF.
+/hardware/common/RayCouplers.kicad_pcb text eol=lf
+/.gitattributes text eol=lf
+*.zip -text
+*.png -text

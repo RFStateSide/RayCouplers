@@ -10,7 +10,13 @@ CLI=os.environ.get('KICAD_CLI',r'C:\Program Files\KiCad\9.0\bin\kicad-cli.exe')
 LAYERS=['F_Cu','B_Cu','F_Mask','B_Mask','F_Silkscreen','B_Silkscreen','F_Paste','B_Paste','Edge_Cuts']
 ZIP=PACKAGE/('RayCouplers-CommonPCB-'+ID+'-manufacturing.zip')
 CHECKDIR=ROOT/'validation/phase3';CHECKDIR.mkdir(parents=True,exist_ok=True)
+SOURCE_HASH_POLICY='sha256-utf8-lf-v1'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def source_sha(p):
+ # Canonical source bytes only: validate UTF-8, replace CRLF with LF, retain all other bytes.
+ data=p.read_bytes();data.decode('utf8');data=data.replace(b'\r\n',b'\n')
+ if b'\r' in data:raise ValueError('Unsupported bare CR in source')
+ return hashlib.sha256(data).hexdigest()
 def run(args,name):
  r=subprocess.run([CLI,*args],capture_output=True,text=True);(CHECKDIR/(name+'.log')).write_text(r.stdout+r.stderr,encoding='utf8');assert r.returncode==0,name+r.stderr
 
@@ -48,7 +54,7 @@ def check_geometry():
     ap=flashes[0];assert ap[0]=='RoundRect';v=list(map(float,ap[1].split('X')));assert abs((max(v[1:9:2])-min(v[1:9:2])+2*v[0])-1.2)<.00001;assert abs((max(v[2:9:2])-min(v[2:9:2])+2*v[0])-1.2)<.00001
  assert sum(parsed['B_Paste']['shapes'].values())==2
  assert all(a[:2]==('R','6.000000X6.000000') and attrs.get('C') in ['T1','T2'] for a,xy,attrs in parsed['B_Paste']['flashes'])
- summary={'package':ID,'source':'hardware/common/RayCouplers.kicad_pcb','source_sha256':sha(PCB),'gerbers':{l:sum(d['shapes'].values()) for l,d in parsed.items()},'outline_mm':[70,102],'internal_openings_mm':[[20,30],[20,30]],'plated_hits':244,'nonplated_hits':0,'drill_diameters_mm':dict(collections.Counter(d for x,y,d in hits)),'mounting_holes':4,'diode_pads':'SOD-123, 1.2 x 1.2 mm on copper/mask/paste, pin 1 K / pin 2 A','physical_fabrication_test':'NOT PERFORMED','clearance_acceptance':'0.2 mm retained geometry; not strictly 8 mil; fabricator CAM acceptance required'}
+ summary={'package':ID,'source':'hardware/common/RayCouplers.kicad_pcb','source_sha256':source_sha(PCB),'source_hash_policy':SOURCE_HASH_POLICY,'gerbers':{l:sum(d['shapes'].values()) for l,d in parsed.items()},'outline_mm':[70,102],'internal_openings_mm':[[20,30],[20,30]],'plated_hits':244,'nonplated_hits':0,'drill_diameters_mm':dict(collections.Counter(d for x,y,d in hits)),'mounting_holes':4,'diode_pads':'SOD-123, 1.2 x 1.2 mm on copper/mask/paste, pin 1 K / pin 2 A','physical_fabrication_test':'NOT PERFORMED','clearance_acceptance':'0.2 mm retained geometry; not strictly 8 mil; fabricator CAM acceptance required'}
  # Historical comparison retains macro and arc structure; no claim of bitmap equivalence.
  history=list((ROOT/'manufacturing/historical/2kw').rglob('W764321ASZ24_RayCoupler.kicad_pcb_gerber.zip'))
  if history:
@@ -73,7 +79,7 @@ def export():
  summary=check_geometry();(CHECKDIR/'manufacturing-check.json').write_text(json.dumps(summary,indent=2),encoding='utf8')
  (PACKAGE/'RayCouplers-drill-report.txt').write_text('RayCouplers common PCB '+ID+'\nPlated holes: 244; non-plated drilled holes: 0. Internal openings are routed Edge.Cuts, not drill hits.\n'+''.join(f'{d:.3f} mm: {n} plated hits\n' for d,n in sorted(summary['drill_diameters_mm'].items()))+'Four 3.2 mm grounded plated mounting holes retained. No slots.\n',encoding='utf8')
  payload={p.name:sha(p) for p in PACKAGE.iterdir() if p.is_file() and p.name not in [ZIP.name,'manifest.json','SHA256SUMS.txt']}
- manifest={'identifier':ID,'preparation_date':'2026-10-10','kicad':subprocess.check_output([CLI,'version'],text=True).strip(),'source':'hardware/common/RayCouplers.kicad_pcb','source_sha256':sha(PCB),'export_settings':'X2 Gerber, mm 4.6 absolute; legend minus mask; separate PTH/NPTH metric decimal absolute Excellon; SVG maps','job_metadata_adjustments':'Nominal outline 70 x 102 mm from centerlines; revision P3-prep-01','status':'Engineering preparation; retained clearance rule requires CAM acceptance; not physically fabricated/tested','files':payload}
+ manifest={'identifier':ID,'preparation_date':'2026-10-10','kicad':subprocess.check_output([CLI,'version'],text=True).strip(),'source':'hardware/common/RayCouplers.kicad_pcb','source_sha256':source_sha(PCB),'source_hash_policy':SOURCE_HASH_POLICY,'export_settings':'X2 Gerber, mm 4.6 absolute; legend minus mask; separate PTH/NPTH metric decimal absolute Excellon; SVG maps','job_metadata_adjustments':'Nominal outline 70 x 102 mm from centerlines; revision P3-prep-01','status':'Engineering preparation; retained clearance rule requires CAM acceptance; not physically fabricated/tested','files':payload}
  (PACKAGE/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
  with zipfile.ZipFile(ZIP,'w',zipfile.ZIP_DEFLATED) as z:
   for name in sorted([*payload,'manifest.json']):z.write(PACKAGE/name,name)
@@ -81,7 +87,8 @@ def export():
  check()
 
 def check():
- summary=check_geometry();m=json.loads((PACKAGE/'manifest.json').read_text());assert m['source_sha256']==sha(PCB),'Stale export: source hash changed'
+ summary=check_geometry();m=json.loads((PACKAGE/'manifest.json').read_text());assert m.get('source_hash_policy')==SOURCE_HASH_POLICY,'Unsupported source fingerprint policy'
+ assert m['source_sha256']==source_sha(PCB),'Stale export: canonical source hash changed'
  for name,h in m['files'].items():assert sha(PACKAGE/name)==h,name
  expected=set(m['files'])|{'manifest.json'}
  with zipfile.ZipFile(ZIP) as z:

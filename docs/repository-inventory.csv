@@ -1,116 +1,119 @@
-Path,Selection,Reason
-.gitignore,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-LICENSE,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-NOTICE,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-README.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-archive/backup-manifest.md,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/RayCoupler.csv,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/RayCoupler.jpg,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/RayCoupler.kicad_pcb,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/RayCoupler.kicad_pro,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/RayCoupler.kicad_sch,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/bom/RayCoupler.xlsx,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/200w/bom/ibom.html,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/RayCoupler.csv,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/RayCoupler.jpg,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/RayCoupler.kicad_pcb,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/RayCoupler.kicad_pro,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/RayCoupler.kicad_sch,EXCLUDE,Private historical evidence; preserve locally
-archive/original-projects/2kw/bom/ibom.html,EXCLUDE,Private historical evidence; preserve locally
-archive/phase2-construction/curate.py.txt,EXCLUDE,Private historical evidence; preserve locally
-archive/source-inventory.csv,EXCLUDE,Private historical evidence; preserve locally
-bom/200w/RayCoupler-200w-population.csv,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-bom/2kw/RayCoupler-2kw-population.csv,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-bom/README.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-calibration/measurements/RayCoupler2000_WtoV.xlsx,EXCLUDE,Private historical evidence; preserve locally
-calibration/measurements/RayCoupler200_WtoV.xlsx,EXCLUDE,Private historical evidence; preserve locally
-calibration/profile-traceability.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-calibration/reference/200w-measured-forward.csv,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-calibration/reference/2kw-measured-forward.csv,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/annotation-history.json,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/assembly/200w.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/assembly/2kw.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/assembly/common.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/asset-provenance.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/design-history.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/editing-workflow.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/external-model-dependencies.json,EXCLUDE,Private/local preparation inventory
-docs/fabrication.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/images/README.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/images/raycoupler_toroid.png,INCLUDE_PRIVATE,Owner-attributed RF StateSide website image; final provenance review
-docs/known-limitations.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/license-provenance.json,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/licensing.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/phase2-files.md,EXCLUDE,Private/local preparation inventory
-docs/phase3-files.md,EXCLUDE,Local preparation inventory
-docs/phase3-validation.md,INCLUDE_PRIVATE,Engineering assessment; final owner review
-docs/repository-inventory.csv,INCLUDE_PRIVATE,Proposed selection; no upload performed
-docs/repository-readiness.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/sourcing-review.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/transformer-construction.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/validation.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-docs/variant-configurations.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/RayCouplers-backups/RayCouplers-2026-10-10_171103.zip,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/RayCouplers.kicad_pcb,INCLUDE_PRIVATE,Curated design; embedded custom asset rights require public review
-hardware/common/RayCouplers.kicad_prl,EXCLUDE,Disposable diagnostics / local state
-hardware/common/RayCouplers.kicad_pro,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/RayCouplers.kicad_sch,INCLUDE_PRIVATE,Curated design; embedded custom asset rights require public review
-hardware/common/fp-info-cache,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/fp-lib-table,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/sym-lib-table,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/common/validation-baseline.json,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/libraries/KiCad-libraries-exception.txt,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/LICENSE-KiCad.md,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/README.md,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.kicad_sym,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/D_SOD-123_handSoldering.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/MountingHole_3.2mm_M3_ISO7380_Pad_TopBottom_Gnd.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/RF_Pad_HF.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/RF_Pad_HF_Sm.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/SOIC127P600X175-14N.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/SWRVoltageTransformer.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/libraries/RayCouplers.pretty/TRIM_3296W1103LF.kicad_mod,PRIVATE_REVIEW,Custom origin / mixed collection attribution requires final review
-hardware/variants/200w/README.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/variants/2kw/RayCouplers-backups/RayCouplers-2026-10-10_171205.zip,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/variants/2kw/RayCouplers.kicad_prl,EXCLUDE,Disposable diagnostics / local state
-hardware/variants/2kw/RayCouplers.kicad_pro,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/variants/2kw/RayCouplers.kicad_sch,INCLUDE_PRIVATE,Curated design; embedded custom asset rights require public review
-hardware/variants/2kw/fp-lib-table,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-hardware/variants/2kw/sym-lib-table,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/README.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_bom.csv,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_netlist.ipc,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_positions.csv,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/order-W764321ASZ24/W764321ASZ24.pdf,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/order-W764321ASZ24/W764321ASZ24_RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_bom.csv,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_netlist.ipc,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_positions.csv,EXCLUDE,Private historical evidence; preserve locally
-manufacturing/release/P3-prep-01/LICENSE,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/NOTICE,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-B_Cu.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-B_Mask.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-B_Paste.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-B_Silkscreen.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-CommonPCB-P3-prep-01-fabrication.md,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-CommonPCB-P3-prep-01-manufacturing.zip,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-Edge_Cuts.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-F_Cu.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-F_Mask.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-F_Paste.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-F_Silkscreen.gbr,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-NPTH-drl_map.svg,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-NPTH.drl,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-PTH-drl_map.svg,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-PTH.drl,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-drill-report.txt,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/RayCouplers-job.gbrjob,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/SHA256SUMS.txt,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-manufacturing/release/P3-prep-01/manifest.json,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-tools/cam.py,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-tools/manufacturing.py,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-tools/prepare.py,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-tools/sexpr.py,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
-tools/validate.py,INCLUDE_PRIVATE,Curated preparation material; final owner/legal selection
+Path,Selection,Public_provenance,Reason
+.gitignore,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+LICENSE,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+NOTICE,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+README.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+archive/backup-manifest.md,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/RayCoupler.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/RayCoupler.jpg,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/RayCoupler.kicad_pcb,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/RayCoupler.kicad_pro,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/RayCoupler.kicad_sch,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/bom/RayCoupler.xlsx,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/200w/bom/ibom.html,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/RayCoupler.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/RayCoupler.jpg,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/RayCoupler.kicad_pcb,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/RayCoupler.kicad_pro,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/RayCoupler.kicad_sch,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/original-projects/2kw/bom/ibom.html,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/phase2-construction/curate.py.txt,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+archive/source-inventory.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+bom/200w/RayCoupler-200w-population.csv,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+bom/2kw/RayCoupler-2kw-population.csv,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+bom/README.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+calibration/measurements/RayCoupler2000_WtoV.xlsx,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+calibration/measurements/RayCoupler200_WtoV.xlsx,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+calibration/profile-traceability.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+calibration/reference/200w-measured-forward.csv,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+calibration/reference/2kw-measured-forward.csv,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/annotation-history.json,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/assembly/200w.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/assembly/2kw.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/assembly/common.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/asset-provenance.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/design-history.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/editing-workflow.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/external-model-dependencies.json,EXCLUDE,EXCLUDED,Private/local preparation inventory
+docs/fabrication.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/images/README.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/images/raycoupler_toroid.png,INCLUDE,OWNER_PHOTOGRAPH_AI_EDITING_CONFIRMED,Owner-attributed RF StateSide website image; final provenance review
+docs/known-limitations.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/license-provenance.json,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/licensing.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/phase2-files.md,EXCLUDE,EXCLUDED,Private/local preparation inventory
+docs/phase3-files.md,EXCLUDE,EXCLUDED,Local preparation inventory
+docs/phase3-validation.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Engineering assessment; final owner review
+docs/repository-inventory.csv,INCLUDE,PROJECT_NOTICE_REVIEWED,Proposed selection; no upload performed
+docs/repository-readiness.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/sourcing-review.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/transformer-construction.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/validation.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+docs/variant-configurations.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/common/RayCouplers-backups/RayCouplers-2026-10-10_171103.zip,EXCLUDE,EXCLUDED,Generated KiCad backup/cache; excluded by .gitignore
+hardware/common/RayCouplers.kicad_pcb,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated design; embedded custom asset rights require public review
+hardware/common/RayCouplers.kicad_prl,EXCLUDE,EXCLUDED,Disposable diagnostics / local state
+hardware/common/RayCouplers.kicad_pro,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/common/RayCouplers.kicad_sch,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated design; embedded custom asset rights require public review
+hardware/common/fp-info-cache,EXCLUDE,EXCLUDED,Generated KiCad backup/cache; excluded by .gitignore
+hardware/common/fp-lib-table,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/common/sym-lib-table,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/common/validation-baseline.json,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/libraries/KiCad-libraries-exception.txt,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/LICENSE-KiCad.md,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/README.md,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.kicad_sym,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/D_SOD-123_handSoldering.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/MountingHole_3.2mm_M3_ISO7380_Pad_TopBottom_Gnd.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/RF_Pad_HF.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/RF_Pad_HF_Sm.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/SOIC127P600X175-14N.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/SWRVoltageTransformer.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/libraries/RayCouplers.pretty/TRIM_3296W1103LF.kicad_mod,INCLUDE,OWNER_AND_KICAD_PROVENANCE_DOCUMENTED,Distributed library/notices; individual rights status documented separately in hardware/libraries/README.md
+hardware/variants/200w/README.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/variants/2kw/RayCouplers-backups/RayCouplers-2026-10-10_171205.zip,EXCLUDE,EXCLUDED,Generated KiCad backup/cache; excluded by .gitignore
+hardware/variants/2kw/RayCouplers.kicad_prl,EXCLUDE,EXCLUDED,Disposable diagnostics / local state
+hardware/variants/2kw/RayCouplers.kicad_pro,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/variants/2kw/RayCouplers.kicad_sch,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated design; embedded custom asset rights require public review
+hardware/variants/2kw/fp-lib-table,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+hardware/variants/2kw/sym-lib-table,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/README.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_bom.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_netlist.ipc,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/200w/pcbway_production/2025-11-06-07-48-30/RayCoupler.kicad_pcb_positions.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/order-W764321ASZ24/W764321ASZ24.pdf,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/order-W764321ASZ24/W764321ASZ24_RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_bom.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_gerber.zip,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_netlist.ipc,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/historical/2kw/pcbway_production/2026-01-03-01-32-24/RayCoupler.kicad_pcb_positions.csv,EXCLUDE,EXCLUDED,Private historical evidence; preserve locally
+manufacturing/release/P3-prep-01/LICENSE,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/NOTICE,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-B_Cu.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-B_Mask.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-B_Paste.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-B_Silkscreen.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-CommonPCB-P3-prep-01-fabrication.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-CommonPCB-P3-prep-01-manufacturing.zip,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-Edge_Cuts.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-F_Cu.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-F_Mask.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-F_Paste.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-F_Silkscreen.gbr,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-NPTH-drl_map.svg,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-NPTH.drl,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-PTH-drl_map.svg,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-PTH.drl,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-drill-report.txt,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/RayCouplers-job.gbrjob,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/SHA256SUMS.txt,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+manufacturing/release/P3-prep-01/manifest.json,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+tools/cam.py,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+tools/manufacturing.py,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+tools/prepare.py,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+tools/sexpr.py,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+tools/validate.py,INCLUDE,PROJECT_NOTICE_REVIEWED,Curated preparation material; final owner/legal selection
+.gitattributes,INCLUDE,PROJECT_NOTICE_REVIEWED,Phase 5A distribution/publication correction
+docs/distribution-integrity.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Phase 5A distribution/publication correction
+docs/website-publication-handoff.md,INCLUDE,PROJECT_NOTICE_REVIEWED,Phase 5A distribution/publication correction

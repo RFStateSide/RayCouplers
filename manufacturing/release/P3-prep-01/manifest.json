@@ -3,18 +3,18 @@
   "preparation_date": "2026-10-10",
   "kicad": "9.0.7",
   "source": "hardware/common/RayCouplers.kicad_pcb",
-  "source_sha256": "06be1fd9861445000ff3bf5cc2ca6fb232145bd82769c2cc29c734a79d1db77a",
+  "source_sha256": "f5968cbb65470cbbabefd31855e7ddf999ca55b2be7ae0e339facd8ca6b15fc2",
   "export_settings": "X2 Gerber, mm 4.6 absolute; legend minus mask; separate PTH/NPTH metric decimal absolute Excellon; SVG maps",
   "job_metadata_adjustments": "Nominal outline 70 x 102 mm from centerlines; revision P3-prep-01",
   "status": "Engineering preparation; retained clearance rule requires CAM acceptance; not physically fabricated/tested",
   "files": {
     "LICENSE": "998bbda42e05647f92645d2cb0f230e74a857251d45a00b872ba46c273236a7e",
-    "NOTICE": "adec06245ba4b7c00b6b475d43d6534e7b6594aba9762878b27c6d6cab385809",
+    "NOTICE": "3dcf6d6561af35783cf1940e01a8d70f041c1102152ff2c9062a3819cea0dc98",
     "RayCouplers-B_Cu.gbr": "e7968d9c1e792b67448207ec384842adb1145969a461a4f14d2e392c8eab011c",
     "RayCouplers-B_Mask.gbr": "2cdddc84885c3c6858205f6c4f396685ff6a07b6812d594272d7cdd77694d5d5",
     "RayCouplers-B_Paste.gbr": "717207b7ca8400692c6c5d5eaf0576430587d43d4e84c0e728c340c54b9a390b",
     "RayCouplers-B_Silkscreen.gbr": "93391c6301daf9a37e854ee645d4b11d3b2210867f2710dab3b961268a70b0f5",
-    "RayCouplers-CommonPCB-P3-prep-01-fabrication.md": "57f1b6ea0c28ff79db184ec0f7592eda7f83b12852895ebefae8937d8b5db62d",
+    "RayCouplers-CommonPCB-P3-prep-01-fabrication.md": "4690bb903151c37f488d6941eb5315938e6f7d96136eae09d9a7c775f61717a8",
     "RayCouplers-drill-report.txt": "328ef733974155d075cbcd880c9afcd52d404920c878e728ed602ef097a8b9ef",
     "RayCouplers-Edge_Cuts.gbr": "5ebad5c4a7c3e97b7d9a0e8e4d583a8748ee6135f1546721a015738d41b8087f",
     "RayCouplers-F_Cu.gbr": "f774e8b6150a1ad303235dd7be254eed8b64fbfbc1664e5e7c155a8511cb6dd6",
@@ -26,5 +26,8 @@
     "RayCouplers-NPTH.drl": "76590a02505246b3407727fe0a103171645cd28b8a118c43ca3ef71d1a69bd1a",
     "RayCouplers-PTH-drl_map.svg": "9b3276b62f685ef0d1b2256a07645bc7d96ab73b28ff0a6a73efee9317ae6daa",
     "RayCouplers-PTH.drl": "9deb440d5c5c98d529bc8eba23176e4f8f1dd367571ea584668b444024119c34"
-  }
+  },
+  "source_export_bytes_sha256": "06be1fd9861445000ff3bf5cc2ca6fb232145bd82769c2cc29c734a79d1db77a",
+  "source_hash_policy": "sha256-utf8-lf-v1",
+  "distribution_revision": "Phase-5A-2026-10-11"
 }

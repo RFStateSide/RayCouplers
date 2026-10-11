@@ -30,3 +30,7 @@ Nine Gerbers represent both copper, both mask, both paste, both legend and Edge.
 January 2026 historical manufacture used SOD-323 detectors. These newly generated files use the accepted SOD-123 pads (1.2 × 1.2 mm, 3.3 mm centers, pad 1 K / pad 2 A). They have not been physically fabricated or tested. Historical 2×2 supplier panels and forty-board order evidence remain separate private records.
 
 This is Public Engineering Reference — AS-IS. No guaranteed RF performance, suitability, certification or continuous-power rating is supplied. Factory CAM acceptance, assembly inspection and system-specific calibration remain separate from the software/CAD validation recorded here. No boards were ordered.
+
+## Distribution byte handling
+
+P3-prep-01 CAM geometry is unchanged by the 2026-10-11 Phase 5A packaging correction. Release payloads retain exact bytes under Git attributes; loose files and ZIP members must match, and output checksums hash exact bytes. The manifest source_hash_policy sha256-utf8-lf-v1 identifies UTF-8 PCB bytes with CRLF normalized to LF (bare CR rejected), not platform-specific raw working-tree bytes. See docs/distribution-integrity.md in the source repository for clean-checkout verification. Physical fabrication and CAM acceptance remain separate.
