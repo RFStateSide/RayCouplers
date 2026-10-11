@@ -1,25 +1,58 @@
-# Asset provenance and proposed file inclusion
+# Asset provenance
 
-RF StateSide LLC is the owner-confirmed publisher/copyright holder for its original engineering work. Root CERN-OHL-P-2.0 preparation does not confer third-party rights. See [licensing review](licensing.md).
+RF StateSide LLC developed the original RayCouplers hardware. The supplied
+materials distinguish original contributions, modifications and upstream-derived
+elements. The project license does not override third-party rights.
 
-| Material | Evidence / obligations | Proposed inclusion |
-|---|---|---|
-| Curated schematics/PCB, company docs and BOMs | Owner identifies original project as RF StateSide LLC work; modifications recorded in NOTICE | Initial private repository; public after final owner/legal review |
-| Standard embedded KiCad assets | KiCad library contributors; CC-BY-SA-4.0 with library exception | Retain notices; design exception differs from collection redistribution |
-| Custom local CAD collection | Owner-created footprints, connector customizations and T1/T2 SWRBridge; KiCad-derived portions retain notices; MC74AC74DR2G/trimmer families and aliases are additionally owner-confirmed original drawings | Tracked source; public review status separate from file selection; see collection notice |
-| Installed stock 3D models | External KiCad variable references | References only; no model binaries bundled |
-| Removed external STEP references | Private path inventory; vendor permissions unknown | No STEP binaries or private path inventory in proposed repository |
-| Winding photograph | Owner took the original photograph of physical development samples; AI-assisted cropping/background cleanup only; distributed bytes unchanged | RF StateSide attribution and editing disclosure; experimental samples, not verified final configurations |
-| Original RayCoupler.jpg images | Preserved originals; exact image rights not independently established | Private archive only |
-| Interactive BOM HTML | Embedded software copyright/license blocks, including MIT code; stale populations | Private preserved archive; no republication in this phase |
-| Vendor datasheets/drawings | Manufacturer links; Samtec drawings carry proprietary notices | Links only; no vendor PDF/model/drawing bundled |
-| PCBWay order PDF/old ZIPs | Historical fabrication evidence, private order/customer/account context and older geometry | Private archive; public engineering specifications summarized separately |
-| Original Excel files | Exact files preserved; creator/last-modifier contain personal name | Excluded initially; measured CSV excerpts retain cell provenance |
-| Backup ZIPs | Sixteen originals inventoried, not copied; may contain private/vendor state | Original offline/private history, no automatic upload |
-| Diagnostics/caches/session data | Temporary exports, source paths, local fingerprints | Ignored; never manufacturing release inputs |
+| Included material | Authorship and treatment |
+|---|---|
+| Hardware designs, BOMs and engineering documentation | RF StateSide LLC original work and curated modifications; CERN-OHL-P-2.0 and project NOTICE |
+| Custom symbol families | RF StateSide original drawings include SWRBridge, MC74AC74DR2G and VR_10K_25turn_TH, including related aliases |
+| Custom footprint collection | RF StateSide custom work and modifications; retained KiCad starting elements remain subject to upstream terms |
+| Standard KiCad-derived symbols | KiCad library contributors; CC-BY-SA-4.0 with KiCad-libraries-exception |
+| Transformer photograph | Original RF StateSide photography with AI-assisted cropping and background cleanup |
+| Official legal texts | Original licensors' authorship and wording retained |
+| Manufacturer component information | Identification and datasheet links; candidate parts do not establish historical installation or fit |
 
-The official [KiCad library license](https://www.kicad.org/libraries/license/) distinguishes design/generated use from library collection redistribution. [Collection notices](../hardware/libraries/README.md), unmodified upstream LICENSE-KiCad.md and exception text are prepared. Owner authorship is confirmed for custom footprints and the SWRBridge transformer symbol. The owner additionally confirms drawing both MC74AC74DR2G/trimmer families, including their related aliases; no identified unresolved symbol-source question remains. Standard KiCad-derived portions retain their separate terms. Do not label the entire mixed collection solely CERN-OHL-P.
+## CAD collection
 
-Privacy inspection identified personal creator metadata in workbooks, absolute CAD/model paths in historical designs/private inventories, and supplier order details in retained records. Curated hardware uses relative library tables and installed-library variables. No external STEP binaries, vendor PDFs, order forms, credentials or machine session settings are distributed. Inventory entries can name excluded records. The owner explicitly approves retaining the historical PCBWay order identifier in inventory and supporting tools as manufacturing provenance; private supplier records themselves remain excluded. A filename alone does not establish rights.
+The local collection preserves pin definitions and working footprint geometry.
+Twenty-six of its 31 symbol definitions match standard KiCad graphics/pin
+definitions. Five nonmatching definitions belong to the original transformer,
+logic-device and trimmer families identified above. Connector customizations
+coexist with standard KiCad-derived elements.
 
-Preserve all excluded evidence locally. Later select a separately reviewed archival bundle of meaningful older designs; do not automatically upload every backup/order record. Confirm source/notice obligations before publishing historical interactive BOMs, vendor-derived CAD or original images. No historical file was deleted, rewritten or sanitized in place.
+See [library attribution](../hardware/libraries/README.md) for the included
+definitions and upstream notices. Original authorship of custom work does not
+erase obligations for retained upstream starting material. Do not identify the
+entire mixed collection as exclusively CERN-OHL-P-2.0.
+
+Project-local library tables use relative paths. Installed stock 3D models are
+external KiCad-library references; no external STEP binaries are bundled.
+
+## Photograph
+
+[raycoupler_toroid.png](images/raycoupler_toroid.png) is a photograph of physical
+experimental winding samples made during RF StateSide development. ChatGPT was
+used to crop the photograph and clean up its background. The underlying physical
+samples are not AI-generated.
+
+The distributed image and its metadata are retained unchanged. It is an edited
+photograph, not an unedited camera original, and does not establish final turn
+counts or lead polarity. See [image attribution](images/README.md).
+
+## Component information and retained evidence
+
+Manufacturer links supply component data; vendor PDFs, drawings and model
+binaries are not included. Public component identities and package dimensions
+do not establish ownership of a vendor's CAD material.
+
+Original measurement workbooks and historical supplier records are retained
+privately. The repository supplies measured CSV excerpts with source-cell
+references and summarizes relevant manufacturing history. Those private records,
+backup collections and historical interactive BOM software are not part of the
+supplied file set.
+
+ChatGPT and Codex assistance is acknowledged in the
+[Development Tools section](../README.md#development-tools). The supplemental
+[engineering audit](../PUBLIC_RELEASE_AUDIT.md) is explicitly attributed.

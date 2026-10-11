@@ -13442,7 +13442,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sourcing_Status" "Owner-confirmed core identity, turns and wire; physical lead/polarity mapping requires verification"
+		(property "Sourcing_Status" "Established core identity, turns and wire; physical lead/polarity mapping requires verification"
 			(at 106.68 74.93 0)
 			(effects
 				(font
@@ -16519,7 +16519,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sourcing_Status" "Owner-confirmed core identity, turns and wire; physical lead/polarity mapping requires verification"
+		(property "Sourcing_Status" "Established core identity, turns and wire; physical lead/polarity mapping requires verification"
 			(at 101.6 49.53 0)
 			(effects
 				(font

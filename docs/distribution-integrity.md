@@ -1,38 +1,105 @@
 # Manufacturing distribution integrity
 
-Phase 5A, 2026-10-11. P3-prep-01 remains the accepted preliminary manufacturing geometry; packaging corrections do not establish physical fabrication/test acceptance.
+The P3-prep-01 package is tied to the common PCB by a canonical source
+fingerprint. Its loose files, ZIP payload and checksum records must agree.
+File integrity does not establish physical fabrication or RF performance.
 
-## Exact output bytes and canonical source bytes
+## Exact output bytes
 
-.gitattributes disables text conversion only under manufacturing/release/, plus binary ZIP/PNG files. Release Gerbers, drills, maps, job, fabrication notes, notices, manifest and checksums retain their exact chosen bytes across Git objects, Windows/Linux checkouts and source archives. Ordinary source/documentation text retains normal Git handling. The common PCB has explicit `text eol=lf`.
+[.gitattributes](../.gitattributes) disables text conversion under
+manufacturing/release/ and for binary ZIP/PNG files. Gerbers, drills, maps, job
+metadata, package documentation, notices, manifest and checksums retain exact
+bytes across Git objects and Windows/Linux checkouts. Ordinary source text uses
+normal Git handling; the common PCB explicitly uses text eol=lf.
 
-Manufacturing file hashes and SHA256SUMS.txt always hash exact bytes, with no output normalization or mismatch acceptance. Every ZIP member must equal its loose payload byte-for-byte; the manifest hashes all 18 payload files. SHA256SUMS.txt hashes those files, manifest and ZIP (20 entries), excluding itself.
+The manifest hashes 18 payload files. The ZIP contains those files plus the
+manifest: 19 members. SHA256SUMS.txt hashes the 18 payload files, manifest and
+ZIP, excluding itself: 20 entries.
 
-The manifest source_hash_policy is `sha256-utf8-lf-v1`: validate the source file as UTF-8, replace every CRLF pair with LF, reject bare CR, then SHA-256 the resulting bytes. Preserve all other bytes, whitespace and the final-newline state. This canonical source digest works for modified projects without Git history and ignores only platform line-ending differences. It is not a Git object ID and is not an arbitrary working-tree-byte hash. For this unchanged source it equals the initial committed LF PCB SHA-256: f5968cbb65470cbbabefd31855e7ddf999ca55b2be7ae0e339facd8ca6b15fc2.
+Hashes use exact output bytes. Every ZIP member must equal its loose file
+byte-for-byte. Line-ending normalization is not an acceptable output mismatch.
 
-The former 06be1fd9861445000ff3bf5cc2ca6fb232145bd82769c2cc29c734a79d1db77a digest identifies the CRLF export-time source representation. The corrected manifest retains that explicitly labeled historical value. Future exports use the canonical policy; any substantive source change invalidates the package until consciously re-exported. Output hashes remain independent exact-byte verification.
+## Canonical source fingerprint
 
-Phase 5A preserves accepted geometry-bearing bytes from the original ZIP. The ZIP must be repacked because the manifest gains explicit canonical hash semantics and NOTICE/fabrication documentation gains current distribution information. Repacking does not re-export CAM or change any Gerber/drill/map/job/report bytes. The canonical source check and all strict manifest/ZIP/checksum comparisons remain enabled.
+The manifest policy **sha256-utf8-lf-v1** performs these steps on the PCB source:
 
-## Proposed snapshot versus final clean clone
+1. Validate UTF-8.
+2. Replace CRLF pairs with LF.
+3. Reject remaining bare CR.
+4. SHA-256 the resulting bytes, preserving all other bytes and newline state.
 
-Before a corrected commit exists, only a prospective distribution snapshot can be tested. An isolated temporary Git index/repository can apply attributes without staging or committing the authoritative checkout. Phase 5A verification checks prospective object bytes and simulated core.autocrlf=true/false checkouts. This does not claim a corrected GitHub commit, live Linux CAD run or owner acceptance.
+This policy ignores only source line-ending differences. It is not a Git object
+ID. For the supplied unchanged source the digest is:
 
-When the owner separately authorizes staging/commit, stage .gitattributes and the intended corrections, and explicitly run `git add --renormalize -- manufacturing/release/P3-prep-01` before reviewing the staged diff. This forces already-tracked release files to be stored under the new -text policy; a stat-cached status listing alone can omit unchanged working files whose prospective Git representation changes. These commands were not run in the authoritative repository during Phase 5A. Expect line-ending-only blob changes for retained generated payloads, not geometry changes.
-
-After separately authorized commit/push, verify the exact new SHA from a clean clone or GitHub source download. On Linux, with Python 3 and KiCad 9 libraries/CLI installed:
-
-```sh
-git clone https://github.com/RFStateSide/RayCouplers.git
-cd RayCouplers
-git rev-parse HEAD  # compare with the owner-approved correction commit
-export KICAD_CLI="$(command -v kicad-cli)"
-(cd manufacturing/release/P3-prep-01 && sha256sum -c SHA256SUMS.txt)
-python3 tools/manufacturing.py --check
-python3 tools/prepare.py --projects
-python3 tools/validate.py --portable
+```text
+f5968cbb65470cbbabefd31855e7ddf999ca55b2be7ae0e339facd8ca6b15fc2
 ```
 
-Open hardware/common/RayCouplers.kicad_pro for the common PCB and 200 W schematic; open hardware/variants/2kw/RayCouplers.kicad_pro for the 2 kW population schematic. Inspect library resolution and compare results with the documented historical exceptions. Portable validation is expected to retain disclosed ERC findings; it does not qualify physical hardware. Helpers write ignored generated/validation outputs. Do not run --export merely to test existing artifacts.
+The manifest separately retains the historical raw export-time source digest
+under source_export_bytes_sha256. A substantive source change invalidates the
+existing package. Re-export and validate intentionally changed manufacturing
+source rather than changing the expected source hash to silence a failure.
 
-A GitHub source archive has no .git directory; omit the Git commands, identify its downloaded commit separately, and run the same checksum/helper commands from its extracted root. Private original projects/workbooks are not required. Owner Linux acceptance remains separate and pending until reported.
+## Check an existing distribution
+
+From the repository root with Python 3:
+
+```sh
+python tools/manufacturing.py --check
+```
+
+On Linux, the independent checksum check is:
+
+```sh
+(cd manufacturing/release/P3-prep-01 && sha256sum -c SHA256SUMS.txt)
+```
+
+The Python checker verifies canonical source identity, manifest payload hashes,
+ZIP membership/CRC and exact loose-file correspondence, package inventory,
+checksums and supported geometry features. It uses the standard library and
+does not export CAM. It writes diagnostics under ignored validation/phase3/.
+
+A source archive does not require Git history or private measurement workbooks.
+For a checkout, identify the revision with git rev-parse HEAD. For an archive,
+record the source revision supplied with the download.
+
+## Update documentation without re-exporting CAM
+
+After changing the root NOTICE or repository fabrication notes, run:
+
+```sh
+python tools/manufacturing.py --repack
+python tools/manufacturing.py --check
+```
+
+Repacking first validates the existing package and source fingerprint, copies
+only those two documents, updates actual payload hashes, retains the export
+metadata, rebuilds the ZIP and checksum list, and checks the result. It does not
+run KiCad or rewrite Gerbers, drills, maps, job metadata or the drill report.
+
+Review documentation and hash changes together. Preserve the source fingerprint
+policy and Git attributes. For intentionally changed PCB manufacturing source,
+use the separate --export workflow and inspect all resulting outputs.
+
+## CAD and cross-platform checks
+
+For source validation with KiCad 9 CLI and libraries installed:
+
+```sh
+python tools/prepare.py --projects
+python tools/validate.py --portable
+```
+
+On Linux, set KICAD_CLI to the installed executable when required:
+
+```sh
+export KICAD_CLI="$(command -v kicad-cli)"
+```
+
+These commands create ignored generated/validation outputs. Portable validation
+retains disclosed historical ERC findings; it does not qualify physical hardware.
+Do not run --export simply to check existing artifacts.
+
+See [editing instructions](editing-workflow.md), [fabrication](fabrication.md)
+and the [engineering audit](../PUBLIC_RELEASE_AUDIT.md). The audit separately
+records Windows automated checks and RF StateSide's reported Linux inspection.

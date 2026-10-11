@@ -1,28 +1,65 @@
-# Calibration provenance
+# Calibration reference and traceability
 
-The two measurement workbooks in measurements/ are byte-for-byte copies of the supplied originals. Neither was edited. RayPowerMeter source was consulted for traceability and remains unchanged.
+The repository distributes measured-data CSV excerpts from the original
+RayCoupler measurement workbooks. The workbooks are retained privately and were
+not edited during source preparation. CSV rows identify their source cells;
+the excerpts do not replace the full experimental history.
 
-| Firmware profile | Workbook source | Evidence |
+## Recorded measurements
+
+| Historical profile | Workbook source | Evidence |
 |---|---|---|
-| kCalProfile200W_Fwd_v1 | RayCoupler200_WtoV.xlsx, Sheet2 A2:B20 | All 19 forward voltage/power pairs match; recorded range 0.1–250 W |
-| kCalProfile200W_Ref_v1 | No independently identified reflected measurement column | Forward voltages multiplied by 1.15 at unchanged watts; owner confirms experimental adjustment |
-| kCalProfile2KW_Fwd_v1 | RayCoupler2000_WtoV.xlsx, Sheet1 M4:N17; divider label M2 | All 14 pairs through 1500 W match; selected divider 3.9k/1.2k |
-| kCalProfile2KW_Ref_v1 | Same numerical values as forward array | No independent reflected measurement verification established |
+| kCalProfile200W_Fwd_v1 | RayCoupler200_WtoV.xlsx, Sheet2 A2:B20 | 19 pairs, 0.1–250 W |
+| kCalProfile200W_Ref_v1 | No independently identified reflected measurement column | Forward voltages multiplied by 1.15 at unchanged watts |
+| kCalProfile2KW_Fwd_v1 | RayCoupler2000_WtoV.xlsx, Sheet1 M4:N17; divider label M2 | 14 pairs through 1500 W; selected divider 3.9k/1.2k |
+| kCalProfile2KW_Ref_v1 | Same values as historical forward array | No independent reflected measurement verification |
 
-The active 2 kW 2500 W/2.820 V endpoint is estimated. Its selected workbook ADC cell is blank. The commented 2000 W/2.530 V estimate is not active. Other workbook columns preserve earlier curves and should not be conflated with the selected profile.
+The [200 W forward CSV](reference/200w-measured-forward.csv) preserves Sheet2
+B(voltage)/A(power) pairs. The [2 kW forward CSV](reference/2kw-measured-forward.csv)
+preserves Sheet1 N(voltage)/M(power) pairs. No estimated endpoints or reflected
+adjustments are inserted into these measured exports.
 
-BAT42W detector identity, the divider populations and core configurations are owner-confirmed. The workbooks do not independently establish tested detector manufacturer, exact winding construction or all frequency/instrument/temperature conditions.
+BAT42W, divider populations and core configurations are established project
+facts. The workbooks do not establish the exact tested diode manufacturer or all
+winding, frequency, instrument and temperature conditions.
 
-The 1.15 multiplier is experimental, not a verified universal correction. The derived reflected endpoint is 3.450 V at 250 W and its usable ADC range is unverified. Historical curves are not guaranteed calibration for a new board.
+## Estimates and reflected experiments
 
-## Deferred RayPowerMeter work
+The historical 2 kW firmware endpoint of 2500 W / 2.820 V was estimated; its
+selected workbook ADC cell is blank. The older 2000 W / 2.530 V estimate was
+commented out and was not active. Other workbook columns contain earlier curves,
+which must not be conflated with the selected profile.
 
-Current firmware preferences allow 20 points, but RfPowerSensor runtime retains only 15. The 19-point 200 W factory profile is truncated at its 125 W point and table conversion clamps higher voltages there. This is a mandatory future RayPowerMeter release correction.
+The 200 W reflected 1.15 multiplier was experimental, not a verified universal
+correction. Its derived endpoint is 3.450 V at 250 W; usable ADC range is
+unverified. Identical historical 2 kW forward/reflected arrays do not establish
+an independently measured reflected calibration.
 
-Current factory selection copies the forward array into both paths; separate reflected arrays are not selected. Desktop/serial calibration limits and raw/smoothed calculation consistency also need end-to-end review. The software release is intended to retain measured baseline tables and remove unsupported experimental adjustments. No software changes or builds were performed in Phase 2.
+## RayPowerMeter integration evidence
 
-## Phase 3 distribution preparation
+The following findings describe the RayPowerMeter source snapshot examined
+during repository preparation on 2026-10-10. They are dated findings, not claims
+about every subsequent firmware revision.
 
-Original workbooks remain unchanged in the excluded local evidence area. Personal creator/last-modifier metadata requires owner selection. [200 W measured forward CSV](reference/200w-measured-forward.csv) preserves the 19 Sheet2 B(voltage)/A(power) pairs; [2 kW measured forward CSV](reference/2kw-measured-forward.csv) preserves the 14 Sheet1 N(voltage)/M(power) pairs. Each row records the source cells. No estimated endpoint or reflected 1.15 experiment is inserted into measured exports. These excerpts do not replace the full private experiment history.
+Preferences allow 20 calibration points, while RfPowerSensor runtime retains
+15. The 19-point 200 W factory profile is truncated at its 125 W point, and table
+conversion clamps higher voltages at that endpoint. Factory selection copies
+the forward array into both paths rather than selecting the separate reflected
+arrays.
 
-Fair-Rite 5943001401 and 21 AWG high-temperature enameled wire are now owner-confirmed construction facts. That does not establish missing test conditions or independent reflected measurements. RayPowerMeter source/Git state remain unchanged; software corrections are deferred.
+Desktop/serial limits and raw/smoothed calculation consistency also require
+system-level verification. These software observations affect how historical
+tables are used; they do not change the underlying measured CSV evidence.
+RayPowerMeter corrections and firmware acceptance belong to that separate
+project. No software changes are supplied here.
+
+## Applying the reference
+
+Each new system requires appropriate calibration and verification across its
+intended operating conditions. Historical curves, estimates and experimental
+adjustments are not guaranteed calibration for another assembly.
+
+Use the matching population and [transformer construction](../docs/transformer-construction.md).
+Established materials do not resolve missing test conditions or reflected
+measurements. See [known limitations](../docs/known-limitations.md) and the
+[engineering audit](../PUBLIC_RELEASE_AUDIT.md) for the evidence boundaries.

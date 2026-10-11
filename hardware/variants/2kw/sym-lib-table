@@ -1,1 +1,1 @@
-(sym_lib_table (version 7) (lib (name "RayCouplers")(type "KiCad")(uri "${KIPRJMOD}/../../libraries/RayCouplers.kicad_sym")(options "")(descr "Preserved project symbols; provenance review pending")))
+(sym_lib_table (version 7) (lib (name "RayCouplers")(type "KiCad")(uri "${KIPRJMOD}/../../libraries/RayCouplers.kicad_sym")(options "")(descr "Project symbols; see hardware/libraries/README.md for attribution")))

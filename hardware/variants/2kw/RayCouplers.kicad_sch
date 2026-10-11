@@ -8510,7 +8510,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 64.77 74.93 0)
 			(effects
 				(font
@@ -9379,7 +9379,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 76.2 80.01 0)
 			(effects
 				(font
@@ -10017,7 +10017,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 137.16 80.01 0)
 			(effects
 				(font
@@ -10763,7 +10763,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 64.77 85.09 0)
 			(effects
 				(font
@@ -11765,7 +11765,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 148.59 74.93 0)
 			(effects
 				(font
@@ -12885,7 +12885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sourcing_Status" "Owner-confirmed core identity, turns and wire; physical lead/polarity mapping requires verification"
+		(property "Sourcing_Status" "Established core identity, turns and wire; physical lead/polarity mapping requires verification"
 			(at 106.68 74.93 0)
 			(effects
 				(font
@@ -13062,7 +13062,7 @@
 				)
 			)
 		)
-		(property "Sourcing_Status" "100 ohm value approved; exact replacement MPN unresolved"
+		(property "Sourcing_Status" "100 ohm population value; exact replacement MPN unresolved"
 			(at 148.59 85.09 0)
 			(effects
 				(font
@@ -15962,7 +15962,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sourcing_Status" "Owner-confirmed core identity, turns and wire; physical lead/polarity mapping requires verification"
+		(property "Sourcing_Status" "Established core identity, turns and wire; physical lead/polarity mapping requires verification"
 			(at 101.6 49.53 0)
 			(effects
 				(font

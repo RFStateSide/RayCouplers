@@ -1,36 +1,85 @@
 # Editing and regeneration
 
-## Newcomer setup
+## Setup and source authority
 
-Clone https://github.com/RFStateSide/RayCouplers (access is required while private), install KiCad 9 with its stock libraries and Python 3, then work from the repository root. Open the common project for the 200 W schematic/PCB; open the 2 kW project for its population schematic, not a separate editable PCB. The project-local library tables resolve relatively to hardware/libraries. BOMs are under bom/200w and bom/2kw; common fabrication files are under manufacturing/release/P3-prep-01.
+Install KiCad 9 with its stock libraries and Python 3, then work from the
+repository root. Open hardware/common/RayCouplers.kicad_pro for the common PCB
+and 200 W schematic. Open hardware/variants/2kw/RayCouplers.kicad_pro for the
+2 kW population schematic. Project-local tables resolve relatively to
+hardware/libraries/.
 
-The Python helpers use the standard library. On Linux, set `export KICAD_CLI="$(command -v kicad-cli)"`; on Windows, set the equivalent environment variable if the default KiCad path differs. See [distribution verification](distribution-integrity.md). Owner Linux testing remains pending; no Linux CAD execution result is claimed.
+Edit PCB geometry only in hardware/common/RayCouplers.kicad_pcb. Keep reference
+designators, electrical pin mappings and shared connectivity synchronized across
+both population schematics. Both projects use basename RayCouplers, preserving
+symbol-instance project associations. Variant populations do not require
+independent routing.
 
-## Source authority
+A historical symbol name containing a resistor value is not a population
+selector. Instance Value fields and the corresponding BOM are authoritative;
+generic embedded-library defaults do not override the transformer recipe.
 
-Edit PCB geometry only in `hardware/common/RayCouplers.kicad_pcb`. Edit the 200 W population in its paired schematic, and the 2 kW population in `hardware/variants/2kw/RayCouplers.kicad_sch`. Both projects use basename RayCouplers, matching existing symbol-instance project associations.
+Use the local libraries and installed KiCad 9 stock libraries. Existing working
+geometry differs from some current stock footprints. Do not automatically
+replace it merely to remove comparison warnings. No external STEP binaries
+are required.
 
-Keep reference designators, electrical pin mappings and shared connectivity synchronized across both schematics. Variant changes belong in instance fields and population documentation, not independent routing. Local symbol IDs preserve historical names; a name containing a resistor value is not a population selector. The instance Value and sourcing fields are authoritative.
+After an intentional PCB edit, refill zones and save the common board before
+regenerating. If updating from schematic, use the paired common 200 W schematic.
+Inspect the diff and preserve intended mounting pads, detector lands, RF geometry
+and placements. Never update the authority from a disposable 2 kW project.
 
-Use the project-local symbol/footprint tables and standard KiCad 9 libraries. The existing working geometry differs from current stock libraries. Do not click automatic footprint replacement merely to remove comparison warnings. Custom footprints were exported with KiCad's native footprint API; no external STEP files were bundled.
+## Derived projects and BOMs
 
-After an authorized PCB edit, refill zones and save the common board in KiCad before regenerating. If updating from schematic, use the common project's 200 W schematic; inspect the diff and retain mounting pads, detector lands, RF geometry, and all approved placements. Never update the common board directly from a disposable 2 kW project.
+Generate disposable paired projects for validation:
 
-## Derived outputs
-
-```powershell
+```sh
 python tools/prepare.py --projects
 python tools/validate.py --portable
 ```
 
-`prepare.py` derives each disposable PCB from the common authority, changes population properties and schematic paths only, and writes under `generated/200w` and `generated/2kw`. These projects allow normal same-basename KiCad parity checks. They are ignored by Git and must never become design authorities.
+The generator derives both PCBs from the common authority, changing population
+properties and schematic paths. It writes under generated/200w and generated/2kw.
+These ignored copies support same-basename KiCad parity checks and are not
+editable design authorities.
 
-BOM generation includes all 50 electrical/test-point references, jumper headers despite their former exclusion flags, and explicit mechanical/accessory rows. It groups only records whose value, package and sourcing/assembly information agree.
+After population or sourcing-note changes, regenerate BOMs:
 
-`validate.py` exports original and curated netlists, compares the original 50-reference electrical graph, checks approved geometry and population differences, validates both BOMs, runs ERC/DRC/parity, and verifies original-source hashes and preserved copies. It rejects new DRC errors, unconnected items, parity findings and unexpected ERC error categories.
+```sh
+python tools/prepare.py --boms
+```
 
-Set `KICAD_CLI` to the executable path if needed. Python helpers use the standard library only. The local integrity check expects the original source paths recorded in `validation/source-baseline.json`. On another machine, run `python tools/validate.py --portable`: this validates CAD, geometry and BOMs against the included fingerprint, and checks preserved copies only when available, without requiring the owner's private source folders. It cannot establish that those external folders remained unchanged.
+Each BOM covers all 50 electrical/test-point references, including jumper
+headers, plus mechanical/accessory requirements. Grouping requires matching
+value, package and sourcing/assembly information. Routine verification need not
+rewrite tracked BOMs. See [BOM interpretation](../bom/README.md).
 
-The one-time construction script remains private inert historical evidence under `archive/phase2-construction/`. It is excluded from distribution and is not needed to rebuild the curated projects. After an authorized population edit, regenerate the affected BOMs with `python tools/prepare.py --boms`; ordinary verification need not rewrite tracked BOMs.
+## Validation environment and scope
 
-The preliminary common manufacturing package is generated and checked with `python tools/manufacturing.py --export` and `python tools/manufacturing.py --check`; review [fabrication requirements](fabrication.md) first. Do not put disposable projects, logs, previews, or temporary comparisons into a release manufacturing package.
+The Python helpers use the standard library. KiCad CLI is needed for source
+checks. Set KICAD_CLI when its executable differs from the default Windows path.
+On Linux:
+
+```sh
+export KICAD_CLI="$(command -v kicad-cli)"
+```
+
+Portable validation uses the included geometry/connectivity fingerprint and
+checks CAD, populations, BOMs, ERC, DRC and parity. Preserved originals are
+checked when available; private development directories are not required.
+The full local mode additionally uses private source-baseline records and
+cannot establish preservation of external originals on an unrelated machine.
+
+The [engineering audit](../PUBLIC_RELEASE_AUDIT.md) records existing ERC/DRC
+exceptions and separate Windows/Linux evidence. Changes must be assessed against
+that scope rather than described as physically validated by CAD checks.
+
+## Manufacturing outputs
+
+Read [fabrication requirements](fabrication.md) and
+[distribution integrity](distribution-integrity.md). Use --check to verify
+existing files, --repack for NOTICE/fabrication-document updates, and --export
+only to rebuild manufacturing output from an intentionally changed source.
+
+Do not include disposable projects, logs or temporary comparisons in the
+manufacturing package. Source editing, fabricator acceptance, assembly inspection
+and RF calibration are distinct activities.

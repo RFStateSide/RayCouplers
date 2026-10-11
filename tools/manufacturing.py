@@ -1,6 +1,7 @@
 """Export/check one common preliminary fabrication package. Python standard library only."""
 from pathlib import Path
 import argparse,collections,hashlib,json,os,subprocess,shutil,zipfile,math
+from datetime import date
 from sexpr import *
 from cam import gerber,drill
 ROOT=Path(__file__).resolve().parents[1]
@@ -86,6 +87,23 @@ def export():
  (PACKAGE/'SHA256SUMS.txt').write_text(''.join(sha(p)+'  '+p.name+'\n' for p in sorted(PACKAGE.iterdir()) if p.is_file() and p.name!='SHA256SUMS.txt'),encoding='utf8')
  check()
 
+def repack():
+ """Refresh NOTICE/fabrication notes and hashes without exporting CAM."""
+ check()  # Reject a stale source or broken existing package before changing it.
+ m=json.loads((PACKAGE/'manifest.json').read_text())
+ changed={'NOTICE','RayCouplers-CommonPCB-'+ID+'-fabrication.md'}
+ retained={name:sha(PACKAGE/name) for name in m['files'] if name not in changed}
+ for src,dest in [(ROOT/'NOTICE',PACKAGE/'NOTICE'),(ROOT/'docs/fabrication.md',PACKAGE/('RayCouplers-CommonPCB-'+ID+'-fabrication.md'))]:
+  shutil.copy2(src,dest)
+ m['files']={name:sha(PACKAGE/name) for name in m['files']}
+ m['documentation_revision']=date.today().isoformat()
+ (PACKAGE/'manifest.json').write_text(json.dumps(m,indent=2)+'\n',encoding='utf8',newline='\n')
+ with zipfile.ZipFile(ZIP,'w',zipfile.ZIP_DEFLATED) as z:
+  for name in sorted([*m['files'],'manifest.json']):z.write(PACKAGE/name,name)
+ (PACKAGE/'SHA256SUMS.txt').write_text(''.join(sha(p)+'  '+p.name+'\n' for p in sorted(PACKAGE.iterdir()) if p.is_file() and p.name!='SHA256SUMS.txt'),encoding='utf8',newline='\n')
+ assert all(sha(PACKAGE/name)==h for name,h in retained.items()),'Repacking changed retained payload'
+ check()
+
 def check():
  summary=check_geometry();m=json.loads((PACKAGE/'manifest.json').read_text());assert m.get('source_hash_policy')==SOURCE_HASH_POLICY,'Unsupported source fingerprint policy'
  assert m['source_sha256']==source_sha(PCB),'Stale export: canonical source hash changed'
@@ -99,7 +117,8 @@ def check():
   h,name=line.split('  ',1);assert sha(PACKAGE/name)==h,name
  summary['zip_sha256']=sha(ZIP);summary['zip_members']=len(expected);summary['manifest_archive_integrity']='PASS';(CHECKDIR/'manufacturing-check.json').write_text(json.dumps(summary,indent=2),encoding='utf8');print(json.dumps(summary,indent=2))
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--export',action='store_true');p.add_argument('--check',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--export',action='store_true');p.add_argument('--check',action='store_true');p.add_argument('--repack',action='store_true');a=p.parse_args()
  if a.export:export()
  elif a.check:check()
- else:p.error('Choose --export or --check')
+ elif a.repack:repack()
+ else:p.error('Choose --export, --check or --repack')

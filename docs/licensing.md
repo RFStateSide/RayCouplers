@@ -1,11 +1,58 @@
-# Licensing preparation and review boundary
+# Licensing
 
-Copyright holder: RF StateSide LLC, as owner confirmed. Hardware direction: CERN-OHL-P v2.0; SPDX CERN-OHL-P-2.0. The root [LICENSE](../LICENSE) is the unmodified official permissive text obtained from the [CERN/OHWR source repository](https://gitlab.com/ohwr/project/cernohl/-/raw/master/licence_texts/cern_ohl_p_v2.txt). Acquisition URL, size and SHA-256 are recorded in license-provenance.json; those identify the acquired official CRLF artifact, not Git's LF representation. Only line endings differ in the committed license; the complete legal text is retained. The license text is copyright CERN 2020; the project copyright notice is kept separately in [NOTICE](../NOTICE).
+Copyright RF StateSide LLC. The original RayCouplers hardware contributions and
+associated engineering source documentation are provided under CERN Open
+Hardware Licence Version 2 — Permissive, SPDX **CERN-OHL-P-2.0**.
 
-The official license addresses retaining notices when conveying source (3.1–3.3), recording dated modifications (3.3), supplying the license when conveying under different terms (3.4), and access to applicable notices for product recipients (4). Its warranty/liability provisions are in section 5. This is a review aid, not replacement legal language. No terms were altered. Read the official text for the actual conditions.
+The unmodified [LICENSE](../LICENSE) contains the authoritative legal terms.
+[NOTICE](../NOTICE) records project attribution and modifications. This document
+explains their application; it does not replace or amend the license.
 
-Notices are prepared in README, NOTICE, KiCad title-block comments, BOM documentation, manufacturing fabrication notes and the manufacturing ZIP. On-board historic artwork is retained; no extra copper or silkscreen was added for a legal notice. The prepared distribution notice applies to RF StateSide-owned curated hardware source and related engineering documentation. It does not claim ownership of vendor CAD assets, KiCad library collections or interactive BOM software.
+## Use, modification and distribution
 
-Library collections require separate provenance/attribution review, described in [asset provenance](asset-provenance.md). Original private archives are preserved and excluded from the distributed source. Vendor datasheets/models are linked rather than bundled. Original Excel creator metadata and personal/order records require owner selection before inclusion.
+The license permits use, copying, modification, manufacture and distribution
+subject to its terms. Section 3 addresses source distribution: retain applicable
+notices, and identify modifications with their date and a brief description.
+Section 3.4 addresses distribution under different license terms, including
+providing the CERN license. Section 4 requires product recipients to have access
+to applicable notices.
 
-Engineering-reference statements describe AS-IS status, lack of guaranteed performance/fitness/certification and builder responsibility for evaluation. They do not amend the CERN license and do not establish that RF StateSide LLC or its personnel are free from every possible liability. Final license suitability, company attribution, third-party obligations and liability wording require owner and appropriate legal review before public publication. Preparation milestones do not constitute final public-release or legal approval. Current repository and distribution status are recorded in repository-readiness.md.
+Read the official text for the precise conditions and definitions. These
+paragraphs do not introduce additional restrictions.
+
+## Third-party material
+
+Original RF StateSide contributions and upstream-derived material have distinct
+rights. The mixed CAD collection includes standard KiCad-derived elements under
+CC-BY-SA-4.0 with the KiCad library exception. Preserve the
+[collection attribution](../hardware/libraries/README.md), upstream license and
+exception. The project license does not grant rights to unrelated vendor assets
+or third-party software.
+
+Manufacturer datasheets and models are linked rather than bundled. See
+[asset provenance](asset-provenance.md) for the material actually supplied.
+
+## Engineering-reference status
+
+RayCouplers is a **Public Engineering Reference — AS-IS**. No guaranteed RF power
+handling, accuracy, fitness for a particular application or certification is
+claimed. Builders must evaluate electrical, mechanical, thermal and RF behavior,
+calibrate their systems and address applicable safety and regulatory requirements.
+
+Section 5 of the official license contains warranty disclaimers and liability
+provisions, subject to the limits stated there. Neither this explanation nor the
+engineering-reference designation promises that every possible liability is
+eliminated. See [known limitations](known-limitations.md).
+
+## Official text and acquisition evidence
+
+The license is copyright CERN 2020. The project copyright is recorded separately
+in NOTICE. The text was obtained from the
+[CERN/OHWR source](https://gitlab.com/ohwr/project/cernohl/-/raw/master/licence_texts/cern_ohl_p_v2.txt).
+[license-provenance.json](license-provenance.json) records the URL, retrieval date,
+size and SHA-256 of the acquired CRLF artifact. Git's LF representation differs
+only in line endings; the complete legal text is retained.
+
+The manufacturing package includes LICENSE and NOTICE. Library notices remain
+in their source directory. Existing board artwork is retained; its presence does
+not replace the source-distribution notices.
